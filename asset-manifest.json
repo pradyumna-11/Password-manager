@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/note-locker/static/css/main.2af2f7ee.css",
+    "main.js": "/note-locker/static/js/main.223c368b.js",
+    "static/js/453.ed3810f9.chunk.js": "/note-locker/static/js/453.ed3810f9.chunk.js",
+    "index.html": "/note-locker/index.html",
+    "main.2af2f7ee.css.map": "/note-locker/static/css/main.2af2f7ee.css.map",
+    "main.223c368b.js.map": "/note-locker/static/js/main.223c368b.js.map",
+    "453.ed3810f9.chunk.js.map": "/note-locker/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2af2f7ee.css",
+    "static/js/main.223c368b.js"
+  ]
+}
