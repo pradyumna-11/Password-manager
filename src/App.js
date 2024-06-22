@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route, Redirect } from "react-router-dom";
+import ProtectedRoute from "./Components/ProtectedRoute";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import "./App.css";
+import LoginPage from "./Components/LoginPage";
+import SignupPage from "./Components/SignupPage";
+import Home from "./Components/Home";
+import ForgetPasswordPage from "./Components/ForgetPasswordPage";
+import Notes from "./Components/Notes";
+import NoteEditPage from "./Components/NoteEditPage";
+import NewNote from "./Components/NewNote";
+import PasswordsPage from "./Components/PasswordsPage";
+import PasswordEditPage from "./Components/PasswordEditPage";
+import NotFound from "./Components/NotFound";
+
+const App = () => (
+  <Switch>
+    <ProtectedRoute exact path="/note-locker/" component={Home} />
+    <Route
+      exact
+      path="/note-locker/forget-password"
+      component={ForgetPasswordPage}
+    />
+    <Route exact path="/note-locker/login" component={LoginPage} />
+    <Route exact path="/note-locker/sign-up" component={SignupPage} />
+    <ProtectedRoute exact path="/note-locker/notes" component={Notes} />
+    <ProtectedRoute
+      exact
+      path="/note-locker/notes/:noteId"
+      component={NoteEditPage}
+    />
+    <ProtectedRoute
+      exact
+      path="/note-locker/new-note/:userId"
+      component={NewNote}
+    />
+    <ProtectedRoute
+      exact
+      path="/note-locker/passwords"
+      component={PasswordsPage}
+    />
+    <ProtectedRoute
+      exact
+      path="/note-locker/password/:passwordId"
+      component={PasswordEditPage}
+    />
+    <Route exact path="/note-locker/bad-path" component={NotFound} />
+    <Redirect to="/note-locker/bad-path" />
+  </Switch>
+);
 
 export default App;
